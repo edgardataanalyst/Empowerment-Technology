@@ -23,7 +23,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 30px;
+      padding-top: 120px;
+      padding-left: 20px;
+      padding-right: 20px;
     }
 
     nav {
@@ -41,7 +43,7 @@
     }
 
     nav .logo {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: bold;
       color: white;
     }
@@ -57,6 +59,22 @@
       color: #ffd700;
     }
 
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .header img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .header h2 {
+      font-size: 22px;
+      color: #ffdd57;
+    }
+
     .card {
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(15px);
@@ -66,7 +84,6 @@
       width: 100%;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
       text-align: center;
-      margin-top: 100px;
       animation: fadeInUp 1s ease forwards;
       opacity: 0;
     }
@@ -113,35 +130,47 @@
     }
 
     @media (max-width: 600px) {
+      nav .logo {
+        font-size: 14px;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+
       .card {
         padding: 25px;
       }
 
       .card h1 {
-        font-size: 26px;
+        font-size: 24px;
       }
 
       .card p {
         font-size: 15px;
       }
 
-      nav .logo {
-        font-size: 16px;
-      }
-
-      nav a {
-        font-size: 14px;
+      .header h2 {
+        font-size: 18px;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- NAVIGATION -->
   <nav>
-    <div class="logo">Empowerment Technology - ICT Project 2025-2026</div>
+    <div class="logo">Empowerment Technology - ICT Project</div>
     <a href="index.html">← Back to Home</a>
   </nav>
 
+  <!-- SCHOOL LOGO AND NAME -->
+  <div class="header">
+    <img src="images/nl_logo.jpg" alt="School Logo">
+    <h2>New Life Christian School of Cavite</h2>
+  </div>
+
+  <!-- WELCOME CARD -->
   <div class="card">
     <h1>Welcome to the ABM & STEM Survey Project</h1>
     <p>
