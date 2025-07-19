@@ -23,9 +23,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 120px;
-      padding-left: 20px;
-      padding-right: 20px;
+      padding-top: 80px;
+      padding-bottom: 80px;
     }
 
     nav {
@@ -33,7 +32,7 @@
       background-color: rgba(0, 0, 0, 0.3);
       padding: 10px 20px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       position: fixed;
       top: 0;
@@ -43,36 +42,10 @@
     }
 
     nav .logo {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
       color: white;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #ffd700;
-    }
-
-    .header {
       text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .header img {
-      width: 100px;
-      height: auto;
-      margin-bottom: 10px;
-    }
-
-    .header h2 {
-      font-size: 22px;
-      color: #ffdd57;
     }
 
     .card {
@@ -81,7 +54,7 @@
       border-radius: 20px;
       padding: 40px;
       max-width: 800px;
-      width: 100%;
+      width: 90%;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
       text-align: center;
       animation: fadeInUp 1s ease forwards;
@@ -118,6 +91,27 @@
       background-color: #004ea1;
     }
 
+    footer {
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 15px 20px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      backdrop-filter: blur(10px);
+    }
+
+    footer a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    footer a:hover {
+      color: #ffd700;
+    }
+
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -130,47 +124,30 @@
     }
 
     @media (max-width: 600px) {
-      nav .logo {
-        font-size: 14px;
-      }
-
-      nav a {
-        font-size: 14px;
-      }
-
       .card {
         padding: 25px;
       }
 
       .card h1 {
-        font-size: 24px;
+        font-size: 26px;
       }
 
       .card p {
         font-size: 15px;
       }
 
-      .header h2 {
-        font-size: 18px;
+      nav .logo {
+        font-size: 16px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
   <nav>
-    <div class="logo">Empowerment Technology - ICT Project</div>
-    <a href="index.html">← Back to Home</a>
+    <div class="logo">Empowerment Technology - ICT Project 2025-2026</div>
   </nav>
 
-  <!-- SCHOOL LOGO AND NAME -->
-  <div class="header">
-    <img src="images/nl_logo.jpg" alt="School Logo">
-    <h2>New Life Christian School of Cavite</h2>
-  </div>
-
-  <!-- WELCOME CARD -->
   <div class="card">
     <h1>Welcome to the ABM & STEM Survey Project</h1>
     <p>
@@ -180,6 +157,10 @@
     </p>
     <a href="Survey_index.html" class="button">Start Survey Now</a>
   </div>
+
+  <footer>
+    <a href="index.html">← Back to Home</a>
+  </footer>
 
 </body>
 </html>
