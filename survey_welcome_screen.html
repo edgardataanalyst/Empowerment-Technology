@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome | ABM & STEM Survey Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #002244, #005cbf);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    }
+
+    nav {
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    nav .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 800px;
+      width: 100%;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      margin-top: 100px;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+    }
+
+    .card h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .card p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #f0f0f0;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 28px;
+      background-color: #0074e4;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #004ea1;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 25px;
+      }
+
+      .card h1 {
+        font-size: 26px;
+      }
+
+      .card p {
+        font-size: 15px;
+      }
+
+      nav .logo {
+        font-size: 16px;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Empowerment Technology - ICT Project 2025-2026</div>
+    <a href="index.html">← Back to Home</a>
+  </nav>
+
+  <div class="card">
+    <h1>Welcome to the ABM & STEM Survey Project</h1>
+    <p>
+      The ABM and STEM strands of New Life Christian School of Cavite proudly present their Survey Projects as part of the Empowerment Technology subject. These projects highlight the students' digital literacy by collecting and analyzing real data on relevant topics such as financial literacy, technology usage, and career interests.
+      <br><br>
+      Through these meaningful surveys and website integration, students developed practical ICT skills, critical thinking, and creativity. We invite you to explore their work and see how technology helps them connect their academic knowledge to the real world.
+    </p>
+    <a href="Survey_index.html" class="button">Start Survey Now</a>
+  </div>
+
+</body>
+</html>
