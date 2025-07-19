@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Empowerment Tech Projects</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Survey Projects</title>
   <style>
     * {
       margin: 0;
@@ -13,112 +12,114 @@
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f1f5f9;
-      color: #003366;
-      scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #dceeff, #fef9e7);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     header {
-      background-color: #003366;
-      padding: 30px 20px;
+      background: #003366;
       color: white;
+      width: 100%;
       text-align: center;
-    }
-
-    header img {
-      height: 50px;
-      margin-bottom: 10px;
-    }
-
-    header h1 {
-      font-size: 24px;
-      margin-bottom: 5px;
-    }
-
-    header p {
-      font-size: 14px;
-      color: #d1e7ff;
+      padding: 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      animation: fadeDown 1s ease;
     }
 
     .container {
-      max-width: 1200px;
-      margin: 30px auto;
-      padding: 20px;
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
       justify-content: center;
+      gap: 1.5rem;
+      padding: 30px 20px;
+      width: 100%;
+      max-width: 1200px;
     }
 
     .card {
-      position: relative;
-      background-color: white;
-      width: 280px;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+      width: 300px;
+      background-color: #ffffffdd;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      overflow: hidden;
       text-align: center;
-      opacity: 0;
-      animation: fadeInUp 1s ease forwards;
-      animation-delay: calc(var(--i) * 0.2s);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(6px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     }
 
     .card img {
       width: 100%;
-      height: 140px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-bottom: 15px;
+      height: auto;
+      border-bottom: 2px solid #003366;
+    }
+
+    .card .tag {
+      background: #003366;
+      color: white;
+      padding: 5px;
+      font-size: 0.9rem;
     }
 
     .card h3 {
-      font-size: 16px;
-      font-weight: 600;
-      color: #003366;
+      font-size: 1.3rem;
+      margin: 10px 0 5px;
+      color: #222;
     }
 
-    .tag {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      background-color: #ffd700;
-      color: #003366;
-      padding: 4px 10px;
-      font-size: 12px;
-      font-weight: bold;
-      border-radius: 5px;
+    .card p {
+      font-size: 0.95rem;
+      color: #555;
+      padding: 0 10px 15px;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 20px rgba(0,0,0,0.15);
-    }
-
-    .nav-back {
+    footer {
+      background: #003366;
+      color: white;
+      width: 100%;
       text-align: center;
-      margin: 40px 0 60px;
+      padding: 15px;
+      font-size: 0.9rem;
+      margin-top: auto;
+      animation: fadeUp 1s ease;
     }
 
-    .nav-back a {
+    footer a {
+      color: #ffcc00;
       text-decoration: none;
-      color: #003366;
-      font-weight: 600;
-      background-color: #ffd700;
-      padding: 12px 24px;
-      border-radius: 8px;
-      transition: background 0.3s ease;
-      display: inline-block;
     }
 
-    .nav-back a:hover {
-      background-color: #ffc300;
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 90%;
+      }
     }
 
     @keyframes fadeInUp {
       0% {
         opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(30px);
       }
       100% {
         opacity: 1;
@@ -126,25 +127,25 @@
       }
     }
 
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 20px;
+    @keyframes fadeDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
       }
-
-      header p {
-        font-size: 13px;
+      100% {
+        opacity: 1;
+        transform: translateY(0);
       }
+    }
 
-      .card {
-        width: 90%;
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
       }
-
-      .card h3 {
-        font-size: 15px;
-      }
-
-      .container {
-        padding: 10px;
+      100% {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   </style>
@@ -152,74 +153,80 @@
 <body>
 
   <header>
-    <img src="logo.png" alt="School Logo" />
-    <h1>New Life Christian School of Cavite</h1>
-    <p>Empowerment Technology – Team Projects</p>
+    <h1>Empowerment Technology Survey Projects</h1>
   </header>
 
-  <div class="container">
-    <div class="card" style="--i:1">
-      <div class="tag">Team 1</div>
-      <img src="ict_tools.jpg" alt="Team 1">
-      <h3>ICT Tools for Learning</h3>
-      <p>This survey explores the types of Information and Communication Technology (ICT) tools students commonly use in their academic journey. It aims to identify which digital platforms and tools enhance their learning experience and promote better engagement in class.</p>
-    </div>
+  <section class="container">
 
-    <div class="card" style="--i:2">
+    <!-- Team 1 -->
+    <a href="team1.html" class="card">
+      <div class="tag">Team 1</div>
+      <img src="ict.jpg" alt="Team 1">
+      <h3>ICT Tools for Learning</h3>
+      <p>This survey gathers data about the tools students frequently use to support digital learning in school or at home.</p>
+    </a>
+
+    <!-- Team 2 -->
+    <a href="team2.html" class="card">
       <div class="tag">Team 2</div>
       <img src="career.jpg" alt="Team 2">
-      <h3>Interest in ICT/STEM Careers</h3>
-      <p>This survey investigates students' interest in pursuing careers related to Information and Communication Technology. It aims to understand their level of awareness, motivation, and future aspirations in the growing field of ICT </p>
-    </div>
+      <h3>Interest in ICT Career</h3>
+      <p>This survey measures student interest and exposure to Information and Communication Technology career paths.</p>
+    </a>
 
-    <div class="card" style="--i:3">
+    <!-- Team 3 -->
+    <a href="team3.html" class="card">
       <div class="tag">Team 3</div>
       <img src="eating_habits.jpg" alt="Team 3">
-      <h3>Eating Habits During School Days</h3>
-      <p>This survey explores the eating patterns and food choices of students during school days. It aims to identify common habits and promote awareness of healthy nutrition among learners.</p>
-    </div>
+      <h3>Eating Habits</h3>
+      <p>This survey identifies students' eating routines and choices during school days to promote healthier habits.</p>
+    </a>
 
-    <div class="card" style="--i:4">
+    <!-- Team 4 -->
+    <a href="team4.html" class="card">
       <div class="tag">Team 4</div>
       <img src="financial_literacy.jpg" alt="Team 4">
       <h3>Financial Literacy</h3>
-      <p>This survey assesses students' understanding of basic financial concepts such as budgeting, saving, and spending. It aims to promote responsible money management and prepare learners for real-life financial decisions.</p>
-    </div>
+      <p>This survey checks students' knowledge and behavior when it comes to budgeting, spending, and saving money.</p>
+    </a>
 
-    <div class="card" style="--i:5">
+    <!-- Team 5 -->
+    <a href="team5.html" class="card">
       <div class="tag">Team 5</div>
       <img src="learning_platform.jpg" alt="Team 5">
       <h3>Learning Platforms</h3>
-      <p>This survey explores students' preferences and experiences with various learning platforms, both online and offline. It aims to understand which tools enhance their learning and how technology supports their academic progress.</p>
-    </div>
+      <p>This survey assesses the learning platforms students are most comfortable using and how they affect productivity.</p>
+    </a>
 
-    <div class="card" style="--i:6">
+    <!-- Team 6 -->
+    <a href="team6.html" class="card">
       <div class="tag">Team 6</div>
       <img src="socialmedia_mental.jpg" alt="Team 6">
       <h3>Social Media & Mental Health</h3>
-      <p>This survey examines how social media usage affects students' mental health and emotional well-being. It aims to identify patterns, positive impacts, and possible risks associated with daily online engagement.</p>
-    </div>
+      <p>This survey explores how social media impacts students' emotions, self-esteem, and academic performance.</p>
+    </a>
 
-    <div class="card" style="--i:7">
+    <!-- Team 7 -->
+    <a href="team7.html" class="card">
       <div class="tag">Team 7</div>
       <img src="internet_usage.jpg" alt="Team 7">
-      <h3>Internet Usage Habits</h3>
-      <p>This survey explores students’ frequency, purpose, and duration of internet use both inside and outside school. It aims to understand how digital habits influence academic performance, time management, and personal development.</p>
-    </div>
-  </div>
+      <h3>Internet Usage</h3>
+      <p>This survey reveals how much time students spend online, what sites they visit, and how it influences their life.</p>
+    </a>
 
-     <a href="online_privacy.html" class="card" style="--i:8">
+    <!-- Team 8 -->
+    <a href="online_privacy.html" class="card">
       <div class="tag">Team 8</div>
       <img src="behavior.jpg" alt="Team 8">
       <h3>Digital Responsibility</h3>
-      <p>This survey explores students’ awareness and behavior regarding responsible and ethical use of digital technology in school and daily life.</p>
-    </div>
-  </div> <!-- This properly closes the container -->
+      <p>This survey explores students’ awareness and behavior regarding responsible and ethical use of technology.</p>
+    </a>
 
+  </section>
 
-  <div class="nav-back">
-    <a href="index.html">← Back to Home</a>
-  </div>
+  <footer>
+    <p>© 2025 Manta School of Hope — <a href="index.html">Go back to Home Page</a></p>
+  </footer>
 
 </body>
 </html>
