@@ -17,18 +17,19 @@
       background: black;
       color: white;
       overflow-x: hidden;
+      position: relative;
+      z-index: 1;
     }
 
     /* Background Video */
     .bg-video {
       position: fixed;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      transform: translate(-50%, -50%);
-      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
       object-fit: cover;
+      z-index: -1;
     }
 
     header {
@@ -53,13 +54,13 @@
     }
 
     .container {
-      background: rgba(0, 51, 102, 0.8);
+      background: rgba(0, 51, 102, 0.85);
       padding: 40px;
       border-radius: 20px;
       max-width: 600px;
       width: 100%;
       text-align: center;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(8px);
     }
 
     .container h2 {
@@ -157,13 +158,17 @@
       .school-name {
         font-size: 20px;
       }
+
+      .container {
+        padding: 25px 20px;
+      }
     }
   </style>
 </head>
 <body>
 
   <!-- Background Video -->
-  <video autoplay muted loop class="bg-video">
+  <video autoplay muted loop playsinline class="bg-video">
     <source src="school.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -176,7 +181,7 @@
   <!-- Main Content -->
   <main>
     <div class="container">
-      <h2>Empowerment Technology - ICT Project </h2>
+      <h2>Empowerment Technology - ICT Project</h2>
       <a href="survey_welcome_screen.html" class="btn-link"><button>ABM & STEM Project</button></a>
       <a href="humss_project.html" class="btn-link"><button>HUMSS Project</button></a>
     </div>
@@ -195,7 +200,6 @@
         <a href="tel:+639957536714" title="Call Now">
           <i class="fas fa-phone"></i>
         </a>
-       
       </div>
     </div>
   </footer>
