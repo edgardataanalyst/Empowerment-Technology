@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>NLCSC Portal</title>
+  <title>Upcoming Events | Manta School Portal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * {
@@ -30,46 +30,25 @@
       text-align: center;
     }
 
-    .back-btn {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 999;
-      padding: 10px 20px;
-      background-color: #003366;
-      color: #ffcc00;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s, transform 0.3s;
-    }
-
-    .back-btn:hover {
-      background-color: #002244;
-      transform: scale(1.05);
-    }
-
     .event-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 20px;
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
+      justify-content: center;
+      margin: 30px auto;
+      padding: 0 20px;
     }
 
     .event-card {
       background: white;
       border-radius: 15px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 320px;
       overflow: hidden;
-      animation: fadeInUp 0.8s ease;
+      animation: fadeInUp 1s ease;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-decoration: none;
       color: inherit;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
     }
 
     .event-card:hover {
@@ -79,15 +58,12 @@
 
     .event-image {
       width: 100%;
-      height: 200px;
+      height: 180px;
       object-fit: cover;
-      object-position: center;
-      flex-shrink: 0;
     }
 
     .event-content {
       padding: 20px;
-      flex-grow: 1;
     }
 
     .event-title {
@@ -102,6 +78,27 @@
       line-height: 1.5;
     }
 
+    .back-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .back-btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #003366;
+      color: #ffcc00;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .back-btn:hover {
+      background-color: #002244;
+      transform: scale(1.05);
+    }
+
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -114,32 +111,27 @@
     }
 
     @media (max-width: 768px) {
-      .back-btn {
-        top: 10px;
-        left: 10px;
-        padding: 8px 16px;
-        font-size: 14px;
+      .event-card {
+        width: 90%;
       }
 
-      .event-image {
-        height: 180px;
+      .back-btn {
+        padding: 10px 20px;
+        font-size: 14px;
       }
     }
   </style>
 </head>
 <body>
 
-  <a href="home.html" class="back-btn">← Back to Home</a>
-
   <header>
-    <h3>New Life Christian School</h3>
-    <h5>Portal</h5>
+    <h1>New Life Christian School</h1>
+    <h4>Upcoming Events</h4>
   </header>
 
   <div class="event-container">
-
     <a href="event1.html" class="event-card">
-      <img src="mission.jpg" alt="Mission and Vision" class="event-image">
+      <img src="images/mission.jpg" alt="Orientation Event" class="event-image">
       <div class="event-content">
         <div class="event-title">Mission and Vision</div>
         <div class="event-description">
@@ -149,7 +141,7 @@
     </a>
 
     <a href="event2.html" class="event-card">
-      <img src="courses.jpg" alt="Courses Offered" class="event-image">
+      <img src="images/courses.jpg" alt="First Day" class="event-image">
       <div class="event-content">
         <div class="event-title">Courses Offered</div>
         <div class="event-description">
@@ -159,45 +151,48 @@
     </a>
 
     <a href="event3.html" class="event-card">
-      <img src="employees.jpg" alt="Teacher and Staff" class="event-image">
+      <img src="images/employees.jpg" alt="Sportsfest" class="event-image">
       <div class="event-content">
         <div class="event-title">Teacher and Staff</div>
         <div class="event-description">
-          Team No. 3 – Meet the dedicated educators and staff who guide students with passion, faith, and excellence in every aspect of learning.
+         Team No. 3 – Meet the dedicated educators and staff who guide students with passion, faith, and excellence in every aspect of learning.
         </div>
       </div>
     </a>
 
     <a href="event4.html" class="event-card">
-      <img src="facilities.jpg" alt="Facilities" class="event-image">
+      <img src="images/facilities.jpg" alt="Facilities" class="event-image">
       <div class="event-content">
         <div class="event-title">Facilities</div>
         <div class="event-description">
-          Team No. 4 – Explore our safe and well-equipped school facilities that support effective learning and student development.
+         Team No. 4 – Explore our safe and well-equipped school facilities that support effective learning and student development.
         </div>
       </div>
     </a>
 
     <a href="event5.html" class="event-card">
-      <img src="events.jpg" alt="Upcoming Events" class="event-image">
+      <img src="images/events.jpg" alt="Upcoming Events" class="event-image">
       <div class="event-content">
         <div class="event-title">Upcoming Events</div>
         <div class="event-description">
-          Team No. 5 – Stay informed about the school's upcoming activities and events that foster growth in academics, faith, and community.
+         Team No. 5 – Stay informed about the school's upcoming activities and events that foster growth in academics, faith, and community.
         </div>
       </div>
     </a>
 
     <a href="event6.html" class="event-card">
-      <img src="sportsfest.jpg" alt="Clubs and Organizations" class="event-image">
+      <img src="images/sportsfest.jpg" alt="Clubs" class="event-image">
       <div class="event-content">
         <div class="event-title">Small Group/Organizations</div>
         <div class="event-description">
-          Team No. 6 – Join student clubs that promote talents, leadership, teamwork, and character development beyond the classroom.
+         Team No. 6 – Join student clubs that promote talents, leadership, teamwork, and character development beyond the classroom.
         </div>
       </div>
     </a>
+  </div>
 
+  <div class="back-container">
+    <a href="index.html" class="back-btn">← Back to Home</a>
   </div>
 
 </body>
