@@ -13,16 +13,18 @@
 
     body, html {
       height: 100%;
+      width: 100%;
       font-family: 'Segoe UI', sans-serif;
       overflow-x: hidden;
     }
 
-    video.bg-video {
+    /* Fullscreen Video Background */
+    .bg-video {
       position: fixed;
-      right: 0;
-      bottom: 0;
-      min-width: 100%;
-      min-height: 100%;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
       object-fit: cover;
       z-index: -2;
     }
@@ -31,8 +33,8 @@
       position: fixed;
       top: 0;
       left: 0;
-      height: 100%;
-      width: 100%;
+      height: 100vh;
+      width: 100vw;
       background: rgba(0, 0, 0, 0.6);
       z-index: -1;
     }
@@ -48,12 +50,12 @@
     }
 
     h1 {
-      font-size: 26px;
+      font-size: 28px;
       margin-bottom: 10px;
     }
 
     h2 {
-      font-size: 20px;
+      font-size: 22px;
       margin-bottom: 20px;
     }
 
@@ -100,14 +102,17 @@
 
     @media (max-width: 600px) {
       h1 {
-        font-size: 22px;
+        font-size: 24px;
       }
+
       h2 {
         font-size: 18px;
       }
+
       p {
         font-size: 15px;
       }
+
       .button, .back-link {
         font-size: 15px;
         padding: 10px 20px;
@@ -126,8 +131,8 @@
 
   <!-- Main Content -->
   <div class="container">
-    <h1>Empowerment Technology - ICT </h1>
-    <h2>Digital Responsibility and Online Behavior Survey </h2>
+    <h1>Empowerment Technology - ICT</h1>
+    <h2>Digital Responsibility and Online Behavior Survey</h2>
     <p>This survey aims to understand how students use technology responsibly, manage their screen time, and protect themselves online. It helps raise awareness on the importance of digital citizenship and online safety.</p>
 
     <!-- Google Form Button -->
