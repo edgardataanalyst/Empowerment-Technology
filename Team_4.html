@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Financial Literacy Survey - TECH TITANS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/4.png">
+    <!--
+    <style>
+        body{
+            background-image: url(images/financial\ bg\ img_PhotoGrid.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+    -->
+    <style>
+       .container{
+        position: relative;
+        z-index: 1;
+        padding: 40px 20px;
+        max-width: 800px;
+        margin: auto;
+        color: white;
+        text-align: center;
+        }
+
+        p {
+           font-size: 16px; 
+           line-height: 1.6;
+           margin-bottom: 20px;
+        }
+
+        .video{ 
+            margin-top: 20px;
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            border-radius: 15px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            border-bottom-left-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+         }
+        
+         html{
+            scroll-behavior: smooth;
+         }
+    
+
+    </style>
+
+    
+    <style>
+        body{
+        font-family: Arial, sans-serif;
+        margin: 0;
+        overflow-y: auto;
+    }
+    
+
+        a#START {
+        padding: 15px 20px;
+        background-color: #183B4E;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-radius: 5px;
+        }
+
+        a#START:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(24, 59, 78, 0.4);
+        }   
+
+        a#back {
+        padding: 15px 20px;
+        background-color: #183B4E;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border-radius: 5px;
+        }
+
+        a#back:hover{
+             transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(24, 59, 78, 0.4);
+        }
+
+       .padding {
+         background: rgba(255, 255, 255, 0.099); /* lighter frosted effect */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.099);
+    margin: 40px auto;
+    max-width: 850px;
+       }
+
+       #bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    filter: brightness(0.4); 
+    }
+
+
+     @media (max-width: 768px) {
+        .container {
+            padding: 20px 10px;
+        }
+
+        .padding {
+            margin: 20px 10px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        iframe {
+            width: 90%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+        }
+
+        a#START, a#back {
+            padding: 12px 16px;
+            font-size: 14px;
+            width: 80%;
+        }
+    }
+
+    </style>
+    
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding-bottom: 60px;" >
+    
+    <video autoplay muted loop id="bg-video">
+        <source src="Videos/BACKGROUND_VIDEO_T4.mp4" type="video/mp4" />
+        Your browser does not support video tag.
+    </video>
+
+  <!-- MAIN BODY -->
+   <div class="padding">
+        <div class="container" style="max-width: 700px; margin: auto;">
+            <h1 style="text-align: center; color: white;">Empowerment Technology - ICT</h1>
+            <h2 style="color: #e6f7ff;">Financial Literacy Survey</h2>
+            <p>  This survey aims to understand the Financial Literacy among teenagers at New Life Christian School of Cavite.
+                It helps students futher understand the importance of Financial literacy and helps them manage their allowance.
+            </p>
+            <!-- <input type="submit" value="START SURVEY"  style=" display: block; margin: 30px auto 0 auto; padding: 10px 20px;background-color: #183B4E;color: white; border: none; cursor: pointer;border-radius: 6px;">-->
+            <a id="START" href="https://docs.google.com/forms/d/e/1FAIpQLSeWOCG7h4FB9MTBNA_QDy41FN21I7wnh8FaDBL9sQxLds8E1A/viewform?usp=dialog" target="_self" style="display: block; width: fit-content; margin: 15px auto 0 auto; padding: 15px 20px; background-color: #183B4E; color: white; text-decoration: none; border-radius: 6px; text-align: center;">START SURVEY</a>
+
+        </div>
+    
+
+    <div id="VIDEO" style="text-align: center; margin-top: 10px;">
+        <iframe width="640" height="360" src="https://www.youtube.com/embed/IIKr2915l2g?si=lKHlbP0MeMKMf_Gc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen 
+          style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);"></iframe>
+        
+    </div>
+
+    <a id="back" href="" target="_self" style="display: block; width: fit-content; margin: 20px auto 0 auto; padding: 10px 20px; background-color: #183B4E; color: white; text-decoration: none; border-radius: 6px; text-align: center;">BACK TO HOME PAGE</a>
+        
+   </div>
+</body>
+</html>
