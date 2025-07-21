@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Survey with Video and Box Background</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Background video */
+    #bg-video {
+      position: fixed;
+      top: 100;
+      left: 0;
+      min-width: 100vw;
+      min-height: 100vh;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .header {
+      background: linear-gradient(to right, #0052cc, #3399ff);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 20px;
+      gap: 15px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      background-color: white;
+      border-radius: 50%;
+      background-image: url('logo.jfif');
+      background-size: cover;
+      background-position: center;
+      flex-shrink: 0;
+    }
+
+    .title-text h1 {
+      font-size: 32px;
+      margin: 0;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .content-box {
+      width: 100%;
+      max-width: 960px;
+      padding: 30px 40px;
+      border-radius: 15px;
+      background-color: rgba(0, 0, 0, 0.6);
+      background-blend-mode: overlay;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      color: white;
+      position: relative;
+    }
+
+    .content-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 15px;
+      z-index: 0;
+    }
+
+    .content-box > * {
+      position: relative;
+      z-index: 1;
+    }
+
+.typing-text {
+  text-align: center;
+  font-size: 24px;
+  opacity: 0;
+  transform: translateY(-100px);
+  animation: fall 2s ease-out forwards;
+  margin-bottom: 20px;
+}
+
+@keyframes fall {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+    .content-box p, .content-box ul {
+      color: #f1f1f1;
+    }
+
+    .content-box b {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .content-box ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    .content-box ul li {
+      margin-bottom: 10px;
+    }
+
+    .start-btn {
+      display: block;
+      margin: 30px auto 0;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .start-btn:hover {
+      background-color: #254b9e;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer a {
+      color: #66B2FF;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .header {
+        flex-direction: column;
+      }
+
+      .title-text h1 {
+        font-size: 24px;
+      }
+
+      .typing-text {
+        font-size: 18px;
+      }
+
+      .content-box {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background video -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="Videos/vidEm.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo"></div>
+    <div class="title-text">
+      <h1>Social Media Usage and its Effect on Mental Health</h1>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <main>
+    <div class="content-box">
+      <div class="typing-text">Welcome to Our Survey!</div>
+
+      <p><b>Introduction:</b> This survey explores the relationship between social media usage and students' mental health. With the rise of digital platforms, it's important to understand how online habits impact emotional well-being, focus, and daily life.</p>
+
+      <p><b>Objectives:</b></p>
+      <ul>
+        <li>✔️ To examine the frequency and purpose of social media use among students.</li>
+        <li>✔️ To assess the emotional and mental effects of prolonged social media exposure.</li>
+        <li>✔️ To identify signs of stress, anxiety, or isolation linked to online behavior.</li>
+        <li>✔️ To raise awareness about healthy social media habits and mental well-being.</li>
+      </ul>
+
+      <button class="start-btn" onclick="goToSurvey()">Start Survey</button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    Team Members:
+    <a href="https://www.facebook.com/share/1Fw1EnB7vh/?mibextid=wwXIfr" target="_blank">Jimuel John Paulo</a>,
+    <a href="https://www.facebook.com/share/16gWf5Hp9w/?mibextid=wwXIfr" target="_blank">Trisha Mae Tayag</a>,
+    <a href="https://www.facebook.com/share/19UYS2y3A3/?mibextid=wwXIfr" target="_blank">Jayson Balaoro</a>,
+    <a href="https://www.facebook.com/share/16sFJHZ6wj/?mibextid=wwXIfr" target="_blank">Jasper Montenegro</a>,
+    <a href="https://www.facebook.com/share/1B5QxC8oc3/?mibextid=wwXIfr" target="_blank">John Nicole Nepomuceno</a>,
+  <a href="https://www.facebook.com/share/162uVp114i/?mibextid=wwXIfr" target="_blank" style="color: #66B2FF; text-decoration: none;">Marven Gomez</a>,
+  </footer>
+
+  <!-- Survey redirect -->
+  <script>
+    function goToSurvey() {
+      window.location.href = "https://forms.gle/YYiFjZfAW56iKbmCA";
+    }
+  </script>
+
+</body>
+</html>
