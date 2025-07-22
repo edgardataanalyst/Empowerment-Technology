@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Team Rankings with Confetti</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    /* Background Video */
+    .bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      z-index: -1;
+    }
+
+    h1 {
+      text-align: center;
+      color: #003366;
+      font-size: 2.8rem;
+      margin: 30px 0;
+      animation: slideIn 1s ease-out;
+    }
+
+    .chart-container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .bar-row {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      animation: fadeInUp 0.8s ease forwards;
+      transition: transform 0.3s ease;
+    }
+
+    .bar-row:hover {
+      transform: scale(1.02);
+    }
+
+    .bar-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .team-name {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .top-badge {
+      background: #003366;
+      color: white;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+
+    .bar-track {
+      background: #eee;
+      border-radius: 10px;
+      height: 25px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 0;
+      border-radius: 10px;
+      color: white;
+      padding-left: 10px;
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      animation: fillBar 2s ease-out forwards;
+    }
+
+    .excellent { background: #2ecc71; }
+    .very-good { background: #27ae60; }
+    .good { background: #f1c40f; }
+    .average { background: #e67e22; }
+    .poor { background: #e74c3c; }
+
+    /* Animations */
+    @keyframes fillBar {
+      from { width: 0; }
+      to { width: var(--bar-width); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Confetti Container */
+    #confetti-canvas {
+      position: fixed;
+      pointer-events: none;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🎥 Background Video -->
+  <video autoplay muted loop class="bg-video">
+    <source src="background.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- 🎉 Confetti -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- 🏆 Title -->
+  <h1>🏆 Team Performance Rankings</h1>
+
+  <!-- 📊 Bar Graph Container -->
+  <div class="chart-container" id="chartContainer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    const teams = [
+      { name: 'Team Alpha', score: 95 },
+      { name: 'Team Bravo', score: 78 },
+      { name: 'Team Charlie', score: 60 },
+      { name: 'Team Delta', score: 85 },
+      { name: 'Team Echo', score: 91 }
+    ];
+
+    teams.sort((a, b) => b.score - a.score);
+
+    const chartContainer = document.getElementById('chartContainer');
+
+    teams.forEach((team, index) => {
+      const performanceClass =
+        team.score >= 90 ? 'excellent' :
+        team.score >= 80 ? 'very-good' :
+        team.score >= 70 ? 'good' :
+        team.score >= 60 ? 'average' : 'poor';
+
+      const badge = `Top ${index + 1}`;
+
+      const bar = document.createElement('div');
+      bar.className = 'bar-row';
+      bar.style.animationDelay = `${index * 0.2}s`;
+      bar.innerHTML = `
+        <div class="bar-label">
+          <div class="team-name">
+            <span>${team.name}</span>
+            <span class="top-badge">${badge}</span>
+          </div>
+          <span>${team.score}</span>
+        </div>
+        <div class="bar-track">
+          <div class="bar-fill ${performanceClass}" style="--bar-width: ${team.score}%"></div>
+        </div>
+      `;
+      chartContainer.appendChild(bar);
+    });
+
+    // 🎊 Launch Confetti
+    confetti({
+      particleCount: 150,
+      spread: 100,
+      origin: { y: 0.2 }
+    });
+  </script>
+
+</body>
+</html>
