@@ -17,7 +17,6 @@
       overflow-x: hidden;
     }
 
-    /* Background Video */
     .bg-video {
       position: fixed;
       top: 0;
@@ -112,7 +111,6 @@
     .average { background: #e67e22; }
     .poor { background: #e74c3c; }
 
-    /* Animations */
     @keyframes fillBar {
       from { width: 0; }
       to { width: var(--bar-width); }
@@ -128,7 +126,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Confetti Container */
     #confetti-canvas {
       position: fixed;
       pointer-events: none;
@@ -138,29 +135,58 @@
       height: 100%;
       z-index: 9999;
     }
+
+    .download-btn {
+      display: block;
+      margin: 20px auto;
+      background: #003366;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .download-btn:hover {
+      background: #0055aa;
+    }
+
+    #rawScores {
+      background: white;
+      color: black;
+      padding: 20px;
+      max-width: 600px;
+      margin: 40px auto;
+      border-radius: 10px;
+      display: none;
+    }
   </style>
 </head>
 <body>
 
-  <!-- 🎥 Background Video -->
   <video autoplay muted loop class="bg-video">
     <source src="background.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
   </video>
 
-  <!-- Overlay -->
   <div class="overlay"></div>
 
-  <!-- 🎉 Confetti -->
   <canvas id="confetti-canvas"></canvas>
 
-  <!-- 🏆 Title -->
   <h1>🏆 Team Performance Rankings</h1>
 
-  <!-- 📊 Bar Graph Container -->
   <div class="chart-container" id="chartContainer"></div>
 
+  <button class="download-btn" onclick="downloadJPEG()">📸 Download Raw Scores as JPEG</button>
+
+  <div id="rawScores">
+    <h2>📋 Raw Scores</h2>
+    <ul id="scoreList"></ul>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script>
     const teams = [
       { name: 'Tech-Titans', score: 80 },
@@ -169,12 +195,13 @@
       { name: 'Tech-ka lang', score: 1 },
       { name: 'Team 2', score: 1 },
       { name: 'Data Dreamers', score: 79 },
-       { name: 'Team 7', score: 1 }
+      { name: 'Team 7', score: 1 }
     ];
 
     teams.sort((a, b) => b.score - a.score);
 
     const chartContainer = document.getElementById('chartContainer');
+    const scoreList = document.getElementById('scoreList');
 
     teams.forEach((team, index) => {
       const performanceClass =
@@ -201,15 +228,29 @@
         </div>
       `;
       chartContainer.appendChild(bar);
+
+      const li = document.createElement("li");
+      li.textContent = `${badge} - ${team.name}: ${team.score}`;
+      scoreList.appendChild(li);
     });
 
-    // 🎊 Launch Confetti
     confetti({
       particleCount: 150,
       spread: 100,
       origin: { y: 0.2 }
     });
-  </script>
 
+    function downloadJPEG() {
+      const rawDiv = document.getElementById("rawScores");
+      rawDiv.style.display = "block";
+      html2canvas(rawDiv).then(canvas => {
+        const link = document.createElement("a");
+        link.download = "team-scores.jpeg";
+        link.href = canvas.toDataURL("image/jpeg");
+        link.click();
+        rawDiv.style.display = "none";
+      });
+    }
+  </script>
 </body>
 </html>
