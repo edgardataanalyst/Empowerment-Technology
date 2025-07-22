@@ -41,7 +41,7 @@
       text-align: center;
       color: #003366;
       font-size: 2.8rem;
-      margin: 30px 0;
+      margin: 30px 20px;
       animation: slideIn 1s ease-out;
     }
 
@@ -136,7 +136,7 @@
       z-index: 9999;
     }
 
-    .download-btn {
+    .download-btn, .back-btn {
       display: block;
       margin: 20px auto;
       background: #003366;
@@ -147,9 +147,11 @@
       font-size: 1rem;
       cursor: pointer;
       transition: background 0.3s;
+      text-align: center;
+      text-decoration: none;
     }
 
-    .download-btn:hover {
+    .download-btn:hover, .back-btn:hover {
       background: #0055aa;
     }
 
@@ -161,6 +163,13 @@
       margin: 40px auto;
       border-radius: 10px;
       display: none;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+        margin: 20px;
+      }
     }
   </style>
 </head>
@@ -179,6 +188,8 @@
   <div class="chart-container" id="chartContainer"></div>
 
   <button class="download-btn" onclick="downloadJPEG()">📸 Download Raw Scores as JPEG</button>
+
+  <a href="index.html" class="back-btn">🔙 Go Back to Index</a>
 
   <div id="rawScores">
     <h2>📋 Raw Scores</h2>
