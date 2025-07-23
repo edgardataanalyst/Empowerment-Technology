@@ -6,25 +6,27 @@
   <title>Team Rankings with Confetti</title>
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
     }
 
-    body, html {
-      height: 100%;
+    body {
+      font-family: 'Segoe UI', sans-serif;
       overflow-x: hidden;
+      position: relative;
+      background: #f0f4f8;
     }
 
     .bg-video {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
       object-fit: cover;
-      z-index: -2;
+      opacity: 0.4;
     }
 
     .overlay {
@@ -33,63 +35,44 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(255, 255, 255, 0.8);
+      background-color: rgba(255, 255, 255, 0.85);
       z-index: -1;
     }
 
     h1 {
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       color: #003366;
       font-size: 2.8rem;
       margin: 30px 20px;
       animation: slideIn 1s ease-out;
+      text-align: center;
     }
 
     .chart-container {
-      max-width: 800px;
-      margin: auto;
+      max-width: 700px;
+      margin: 0 auto;
       padding: 20px;
     }
 
     .bar-row {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-      animation: fadeInUp 0.8s ease forwards;
-      transition: transform 0.3s ease;
-    }
-
-    .bar-row:hover {
-      transform: scale(1.02);
+      margin: 20px 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+      opacity: 0;
     }
 
     .bar-label {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      margin-bottom: 8px;
-    }
-
-    .team-name {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .top-badge {
-      background: #003366;
-      color: white;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 0.8rem;
+      margin-bottom: 5px;
+      font-weight: bold;
     }
 
     .bar-track {
-      background: #eee;
+      background: #ccc;
+      height: 20px;
       border-radius: 10px;
-      height: 25px;
       overflow: hidden;
     }
 
@@ -97,78 +80,109 @@
       height: 100%;
       width: 0;
       border-radius: 10px;
-      color: white;
-      padding-left: 10px;
-      display: flex;
-      align-items: center;
-      font-weight: bold;
-      animation: fillBar 2s ease-out forwards;
+      animation: growBar 1.5s ease forwards;
     }
 
-    .excellent { background: #2ecc71; }
-    .very-good { background: #27ae60; }
-    .good { background: #f1c40f; }
-    .average { background: #e67e22; }
-    .poor { background: #e74c3c; }
+    .excellent { background-color: #2ecc71; }
+    .very-good { background-color: #3498db; }
+    .good { background-color: #f1c40f; }
+    .average { background-color: #e67e22; }
+    .poor { background-color: #e74c3c; }
 
-    @keyframes fillBar {
-      from { width: 0; }
-      to { width: var(--bar-width); }
+    .top-badge {
+      background: gold;
+      color: black;
+      padding: 2px 6px;
+      border-radius: 5px;
+      font-size: 0.75rem;
+      margin-left: 10px;
     }
 
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateY(-50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    #confetti-canvas {
-      position: fixed;
-      pointer-events: none;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 9999;
-    }
-
-    .download-btn, .back-btn {
+    .download-btn {
       display: block;
-      margin: 20px auto;
-      background: #003366;
-      color: white;
-      padding: 12px 20px;
+      margin: 30px auto;
+      padding: 10px 25px;
+      background-color: #003366;
+      color: #fff;
       border: none;
-      border-radius: 30px;
+      border-radius: 25px;
       font-size: 1rem;
       cursor: pointer;
-      transition: background 0.3s;
-      text-align: center;
-      text-decoration: none;
+      transition: background 0.3s ease;
     }
 
-    .download-btn:hover, .back-btn:hover {
-      background: #0055aa;
+    .download-btn:hover {
+      background-color: #0055aa;
     }
 
     #rawScores {
-      background: white;
-      color: black;
+      display: none;
       padding: 20px;
       max-width: 600px;
-      margin: 40px auto;
-      border-radius: 10px;
-      display: none;
+      background: white;
+      border: 2px solid #003366;
+      margin: 20px auto;
+      border-radius: 15px;
+    }
+
+    #rawScores h2 {
+      margin-bottom: 10px;
+      color: #003366;
+      text-align: center;
+    }
+
+    #scoreList {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    #scoreList li {
+      margin: 5px 0;
+      font-size: 1.1rem;
+    }
+
+    canvas#confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    @keyframes growBar {
+      to {
+        width: var(--bar-width);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
 
     @media (max-width: 600px) {
       h1 {
-        font-size: 2rem;
-        margin: 20px;
+        font-size: 1.8rem;
+        margin: 20px 10px;
+        text-align: center;
+        flex-direction: column;
       }
     }
   </style>
@@ -176,7 +190,7 @@
 <body>
 
   <video autoplay muted loop class="bg-video">
-    <source src="score_b.mp4" type="video/mp4" />
+    <source src="background.mp4" type="video/mp4" />
   </video>
 
   <div class="overlay"></div>
@@ -188,8 +202,6 @@
   <div class="chart-container" id="chartContainer"></div>
 
   <button class="download-btn" onclick="downloadJPEG()">📸 Download Raw Scores as JPEG</button>
-
-  <a href="Survey_index.html" class="back-btn">🔙 Go Back to Home</a>
 
   <div id="rawScores">
     <h2>📋 Raw Scores</h2>
@@ -245,6 +257,7 @@
       scoreList.appendChild(li);
     });
 
+    // Fire confetti
     confetti({
       particleCount: 150,
       spread: 100,
@@ -254,13 +267,16 @@
     function downloadJPEG() {
       const rawDiv = document.getElementById("rawScores");
       rawDiv.style.display = "block";
-      html2canvas(rawDiv).then(canvas => {
-        const link = document.createElement("a");
-        link.download = "team-scores.jpeg";
-        link.href = canvas.toDataURL("image/jpeg");
-        link.click();
-        rawDiv.style.display = "none";
-      });
+
+      setTimeout(() => {
+        html2canvas(rawDiv).then(canvas => {
+          const link = document.createElement("a");
+          link.download = "team-scores.jpeg";
+          link.href = canvas.toDataURL("image/jpeg");
+          link.click();
+          rawDiv.style.display = "none";
+        });
+      }, 200);
     }
   </script>
 </body>
