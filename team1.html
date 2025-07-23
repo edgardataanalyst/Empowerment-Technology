@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ICT Tools Survey - TECH-KA LANG</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: 'Gill Sans MT';
+      src: local('Gill Sans MT'), local('GillSansMT'), url('https://fonts.cdnfonts.com/s/13111/GillSansMT.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(to right, #06415a, #234e5c, #1a88b7);
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: 'Gill Sans MT', sans-serif;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header, footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(-45deg, #001830, #0052b1, #003c6c, #0086d1);
+      background-size: 300% 300%;
+      animation: gradientShift 8s ease infinite;
+      padding: 15px 30px;
+      flex-wrap: wrap;
+      font-family: 'Gill Sans MT', sans-serif;
+    }
+
+    header img {
+      height: 70px;
+    }
+
+    header h2 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 18px;
+      color: #ffffff;
+    }
+
+    .center-text {
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      opacity: 2;
+    }
+
+    .container {
+      background-color: rgba(0, 22, 44, 0.85);
+      padding: 40px 30px;
+      border-radius: 20px;
+      max-width: 800px;
+      margin: 80px auto;
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.7), 0 0 60px rgba(0, 130, 182, 0.6);
+      font-family: 'Gill Sans MT', sans-serif;
+    }
+
+    h1, .animated-text, h2.survey-aim {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      text-decoration-thickness: 4;
+    }
+
+    .survey-aim {
+      font-size: 22px;
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 20px;
+      text-decoration-thickness: 5;
+    }
+
+    p, ul {
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-size: 19px;
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 25px;
+    }
+
+    li {
+      text-align: justify;
+    }
+
+    @keyframes buttonGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .btn {
+      background: linear-gradient(270deg, #00cfff, #00a3c4, #0052b1, #00cfff);
+      background-size: 400% 400%;
+      animation: buttonGradient 6s ease infinite;
+      color: #ffffff;
+      border: none;
+      padding: 12px 30px;
+      font-size: 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      transition: all 0.3s ease;
+      width: fit-content;
+      text-decoration-thickness: 5;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0, 31, 39, 0.6);
+    }
+
+    iframe {
+      width: 100%;
+      height: 360px;
+      border: none;
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+
+    footer {
+      flex-direction: row;
+      text-align: center;
+      font-size: 18px;
+      font-family: 'Gill Sans MT', sans-serif;
+      text-decoration-thickness: 5;
+    }
+
+    .footer-link {
+      color: #bff4ff;
+      text-decoration: none;
+      margin: 0 4px;
+    }
+
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      iframe {
+        height: 200px;
+      }
+
+      .btn {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+
+      header img {
+        height: 50px;
+      }
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animated-text {
+      animation: fadeInUp 1.2s ease-out;
+      font-size: 20px;
+      color: #00ffff;
+      margin-top: -18px;
+      margin-bottom: 30px;
+      text-align: center;
+      font-weight: bold;
+      text-shadow: 0 0 8px #00ffff;
+    }
+
+    .title-divider {
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(to right, #00eaff, #0073ff);
+      margin: -10px auto 25px auto;
+      border-radius: 5px;
+      box-shadow: 0 0 12px #00eaff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="team logo.png" alt="Logo">
+    <div class="center-text">
+      <h2>New Life Christian School of Cavite</h2>
+      <p>Team 1 - Tech-ka Lang</p>
+    </div>
+    <img src="nl logo.png" alt="Logo">
+  </header>
+
+  <!-- Background Video -->
+  <video autoplay loop muted playsinline>
+    <source src="background video.mp4" type="video/mp4">
+  </video>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>ICT Tools For Learning Survey</h1>
+    <p class="animated-text">Welcome to Tech-ka Lang Group Survey!</p>
+    <div class="title-divider"></div>
+
+    <p>
+      This survey aims to gather information about how students use Information and Communication Technology (ICT) tools in their learning process.
+    </p>
+
+    <h2 class="survey-aim">🎯OUR AIM:</h2>
+    <ul>
+      <li>To analyze students' perceptions of the effectiveness of ICT tools in enhancing their learning experience.</li>
+      <li>To assess how ICT tools affect students' productivity and academic performance.</li>
+      <li>To identify the most commonly used ICT tools by students for learning.</li>
+      <li>To understand how students utilize ICT tools for specific learning purposes, such as research and presentations.</li>
+    </ul>
+
+    <a href="https://forms.gle/iQsN9SMTPgb7kF2H8" class="btn" target="_blank">START SURVEY</a>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/uB0uVAxRmVY?si=2rQ0Yx2AQOcme1b0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <a href="index.html" class="btn">BACK TO HOME PAGE</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    Team Members: 
+    <a href="https://www.facebook.com/share/16yw18BJpF/" target="_blank" class="footer-link">Aliah Anielle Opia</a>
+    <a href="https://www.facebook.com/andrei.galvez.2024" target="_blank" class="footer-link">Andrei Galvez</a>
+    <a href="https://www.facebook.com/angelica.a.n.m.s?mibextid=ZbWKwL" target="_blank" class="footer-link">Angelica Nicole Sabangan</a> 
+    <a href="https://www.facebook.com/share/1Ax6bNW8Ek/" target="_blank" class="footer-link">Carl Vincent Adame</a> 
+    <a href="https://www.facebook.com/share/19nGZAYsYE/" target="_blank" class="footer-link">Nicole Samaniego</a>
+    <a href="https://www.facebook.com/bwahshahajs" target="_blank" class="footer-link">Pauleen Nabua</a>
+  </footer>
+
+</body>
+</html>
