@@ -271,7 +271,7 @@
       setTimeout(() => {
         html2canvas(rawDiv).then(canvas => {
           const link = document.createElement("a");
-          link.download = "team-scores.jpeg";
+          link.download = "raw_scores.jpeg";
           link.href = canvas.toDataURL("image/jpeg");
           link.click();
           rawDiv.style.display = "none";
