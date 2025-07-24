@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ICT OR STEM CAREER INTEREST</title>
+  <meta name="viewport" content="width=device-width, initial-scale=2.0" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(#aaaaaa 1px, transparent 1px);
+      background-size: 40px 40px;
+      animation: move 15s linear infinite;
+      z-index: -1;
+      opacity: 0.1;
+    }
+
+    @keyframes move {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-50px, -50px); }
+    }
+
+    #bg-video {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.2);
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -2;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .header {
+      background-image: linear-gradient(to bottom, #081F44, #4569AD);
+      color: white;
+      padding: 12px 15px;
+      text-align: center;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: 130px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .header h2 {
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .header p {
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .social-icons {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      animation: pulse 2s infinite;
+    }
+
+    .social-icons a img {
+      width: 28px;
+      height: 28px;
+      margin-left: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover img {
+      transform: scale(1.2);
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .container {
+      background: linear-gradient(to right, #081F44, #4569AD);
+      color: white;
+      border-radius: 12px;
+      padding: 30px 20px;
+      max-width: 900px;
+      margin: 20px auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border: 2px solid black;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .container.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .survey-intro,
+    .objectives li {
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    input[type="submit"] {
+      background-color: #081F44;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 25px;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #222;
+    }
+
+    .footer {
+      background-color: #081F44;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .header h2 {
+        font-size: 22px;
+      }
+      .social-icons {
+        top: 8px;
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background video -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="team2background2.mp4" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Header -->
+  <div class="header">
+    <div style="display: flex; align-items: center; justify-content: center; gap: 12px;">
+      <img src="logo.png" alt="School Logo" style="height: 70px; border-radius: 7px; mix-blend-mode: multiply" />
+
+      <div>
+        <h2>ICT OR STEM CAREER INTEREST</h2>
+        <p>TEAM CHAOS: CAREER INTEREST</p>
+      </div>
+
+      <img src="https://static.wixstatic.com/media/a3abbc_154d846596f24ce1bdc34ff9043dae05~mv2.png/v1/fill/w_244,h_244,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/98282767_287035322692710_912674139302317.png" alt="Right Logo" style="height: 110px; mix-blend-mode: multiply;" />
+    </div>
+
+    <div class="social-icons">
+      <a href="https://www.facebook.com/profile.php?id=100086162787008" target="_blank" title="Facebook">
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" />
+      </a>
+      <a href="https://www.instagram.com/_sayraaaaaaaaaa" target="_blank" title="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+      </a>
+    </div>
+  </div>
+
+  <!-- Container 1: Survey Intro -->
+  <div class="container" id="surveyContainer">
+    <h1>Survey Overview</h1>
+    <div class="survey-intro">
+      <p>
+        Greetings! This survey is designed to collect valuable insights regarding students' interests in pursuing careers in Information and Communications Technology (ICT) and Science, Technology, Engineering, and Mathematics (STEM) fields. It aims to understand the extent of awareness, motivation, and inclination among students toward these fast-evolving and in-demand areas of study and profession.
+      </p>
+    </div>
+    <div class="objectives">
+      <h2>Survey Objectives:</h2>
+      <ul>
+        <li>To promote self-awareness among students about their personal goals and interests.</li>
+        <li>To understand what careers students are aiming for and why.</li>
+        <li>To understand what careers students are aiming for and why.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Survey Button -->
+  <form action="https://docs.google.com/forms/d/e/1FAIpQLSdJ77iP1DQ-CPU9wUYhEP2Yj06m4UNbxsTQxItEfNxqonI2NA/viewform" target="_blank" style="text-align: center; margin-bottom: 40px;">
+    <input type="submit" value="Click here to start Survey" />
+  </form>
+
+  <!-- Footer -->
+  <div class="footer">
+    Team Members: Zaira Jave, Axcel, Cristan Ralph, Aurealou, Archiles Dane, Zean Andrei
+  </div>
+
+  <!-- Scroll Animation -->
+  <script>
+    window.addEventListener('scroll', () => {
+      const el = document.getElementById('surveyContainer');
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add('visible');
+      }
+    });
+  </script>
+</body>
+</html>
