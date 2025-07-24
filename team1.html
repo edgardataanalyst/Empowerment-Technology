@@ -28,6 +28,10 @@
       min-height: 100vh;
       overflow-x: hidden;
       font-family: 'Gill Sans MT', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center; /* Center the content horizontally */
     }
 
     @keyframes gradientShift {
@@ -36,30 +40,32 @@
       100% { background-position: 0% 50%; }
     }
 
-    header, footer {
+    header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       background: linear-gradient(-45deg, #001830, #0052b1, #003c6c, #0086d1);
       background-size: 300% 300%;
       animation: gradientShift 8s ease infinite;
-      padding: 15px 30px;
+      padding: 10px 20px;
       flex-wrap: wrap;
       font-family: 'Gill Sans MT', sans-serif;
+      font-size: 10px;
+      width: 100%;
     }
 
     header img {
-      height: 70px;
+      height: 40px;
     }
 
     header h2 {
       margin: 0;
-      font-size: 30px;
+      font-size: 12px;
     }
 
     header p {
       margin: 0;
-      font-size: 18px;
+      font-size: 10px;
       color: #ffffff;
     }
 
@@ -76,17 +82,18 @@
       min-height: 100%;
       z-index: -1;
       object-fit: cover;
-      opacity: 2;
+      filter: brightness(1.2);
     }
 
     .container {
       background-color: rgba(0, 22, 44, 0.85);
-      padding: 40px 30px;
+      padding: 30px 20px;
       border-radius: 20px;
       max-width: 800px;
-      margin: 80px auto;
-      box-shadow: 0 0 30px rgba(0, 255, 255, 0.7), 0 0 60px rgba(0, 130, 182, 0.6);
+      margin: 0 auto;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), 0 0 40px rgba(0, 130, 182, 0.3);
       font-family: 'Gill Sans MT', sans-serif;
+      width: 60%; /* Adjusted to create even space on both sides */
     }
 
     h1, .animated-text, h2.survey-aim {
@@ -95,24 +102,22 @@
 
     h1 {
       text-align: center;
-      font-size: 32px;
+      font-size: 18px;
       letter-spacing: 1px;
       margin-bottom: 20px;
-      text-decoration-thickness: 4;
     }
 
     .survey-aim {
-      font-size: 22px;
+      font-size: 16px;
       color: #ffffff;
       text-align: center;
       margin-bottom: 20px;
-      text-decoration-thickness: 5;
     }
 
     p, ul {
       line-height: 1.6;
       margin-bottom: 20px;
-      font-size: 19px;
+      font-size: 13px;
       text-align: center;
     }
 
@@ -122,7 +127,7 @@
     }
 
     li {
-      text-align: justify;
+      text-align: left;
     }
 
     @keyframes buttonGradient {
@@ -137,8 +142,8 @@
       animation: buttonGradient 6s ease infinite;
       color: #ffffff;
       border: none;
-      padding: 12px 30px;
-      font-size: 20px;
+      padding: 8px 16px;
+      font-size: 12px;
       border-radius: 30px;
       cursor: pointer;
       text-decoration: none;
@@ -147,7 +152,6 @@
       text-align: center;
       transition: all 0.3s ease;
       width: fit-content;
-      text-decoration-thickness: 5;
     }
 
     .btn:hover {
@@ -164,40 +168,28 @@
     }
 
     footer {
-      flex-direction: row;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      font-size: 18px;
+      padding: 15px 10px;
+      background-color: rgba(0, 22, 44, 0.8);
+      font-size: 10px;
       font-family: 'Gill Sans MT', sans-serif;
-      text-decoration-thickness: 5;
+      width: 100%;
     }
 
     .footer-link {
-      color: #bff4ff;
+      color: #10cbf1;
       text-decoration: none;
-      margin: 0 4px;
+      margin: 0 2px;
+      transition: color 0.3s ease;
     }
 
     .footer-link:hover {
       text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 24px;
-      }
-
-      iframe {
-        height: 200px;
-      }
-
-      .btn {
-        font-size: 14px;
-        padding: 10px 20px;
-      }
-
-      header img {
-        height: 50px;
-      }
+      color: #00eaff;
     }
 
     @keyframes fadeInUp {
@@ -213,7 +205,7 @@
 
     .animated-text {
       animation: fadeInUp 1.2s ease-out;
-      font-size: 20px;
+      font-size: 16px;
       color: #00ffff;
       margin-top: -18px;
       margin-bottom: 30px;
@@ -230,6 +222,54 @@
       border-radius: 5px;
       box-shadow: 0 0 12px #00eaff;
     }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 16px;
+      }
+
+      iframe {
+        height: 200px;
+      }
+
+      .btn {
+        font-size: 11px;
+        padding: 6px 12px;
+      }
+
+      header img {
+        height: 30px;
+      }
+
+      header h2 {
+        font-size: 11px;
+      }
+
+      .animated-text {
+        font-size: 12px;
+      }
+
+      .container {
+        margin: 30px 12px;
+        padding: 20px 15px;
+        width: 80%; /* Adjusted for smaller screens */
+      }
+
+      ul li, p, ul {
+        font-size: 11px;
+      }
+
+      footer {
+        flex-direction: row;
+        font-size: 10px;
+        padding: 10px;
+      }
+
+      .footer-link {
+        display: inline;
+        margin: 0 1px;
+      }
+    }
   </style>
 </head>
 
@@ -237,28 +277,26 @@
 
   <!-- Header -->
   <header>
-    <img src="1.png" alt="Logo">
+    <img src="team logo.png" alt="Logo">
     <div class="center-text">
       <h2>New Life Christian School of Cavite</h2>
       <p>Team 1 - Tech-ka Lang</p>
     </div>
-    <img src="newlife.jpg" alt="Logo">
+    <img src="nl logo.png" alt="Logo">
   </header>
 
   <!-- Background Video -->
   <video autoplay loop muted playsinline>
-    <source src="1.mp4" type="video/mp4">
+    <source src="background video.mp4" type="video/mp4">
   </video>
 
   <!-- Main Content -->
   <div class="container">
     <h1>ICT Tools For Learning Survey</h1>
-    <p class="animated-text">Welcome to Tech-ka Lang Group Survey!</p>
+    <p class="animated-text">Welcome to our Group Survey!</p>
     <div class="title-divider"></div>
 
-    <p>
-      This survey aims to gather information about how students use Information and Communication Technology (ICT) tools in their learning process.
-    </p>
+    <p>This survey aims to gather information about how students use Information and Communication Technology (ICT) tools in their learning process.</p>
 
     <h2 class="survey-aim">🎯OUR AIM:</h2>
     <ul>
@@ -270,19 +308,19 @@
 
     <a href="https://forms.gle/iQsN9SMTPgb7kF2H8" class="btn" target="_blank">START SURVEY</a>
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/uB0uVAxRmVY?si=2rQ0Yx2AQOcme1b0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/uB0uVAxRmVY?si=2rQ0Yx2AQOcme1b0" title="YouTube video player" allowfullscreen></iframe>
 
-    <a href="Survey_index.html" class="btn">BACK TO HOME PAGE</a>
+    <a href="index.html" class="btn">BACK TO HOME PAGE</a>
   </div>
 
   <!-- Footer -->
   <footer>
-    Team Members: 
-    <a href="https://www.facebook.com/share/16yw18BJpF/" target="_blank" class="footer-link">Aliah Anielle Opia</a>
-    <a href="https://www.facebook.com/andrei.galvez.2024" target="_blank" class="footer-link">Andrei Galvez</a>
-    <a href="https://www.facebook.com/angelica.a.n.m.s?mibextid=ZbWKwL" target="_blank" class="footer-link">Angelica Nicole Sabangan</a> 
-    <a href="https://www.facebook.com/share/1Ax6bNW8Ek/" target="_blank" class="footer-link">Carl Vincent Adame</a> 
-    <a href="https://www.facebook.com/share/19nGZAYsYE/" target="_blank" class="footer-link">Nicole Samaniego</a>
+    Team Members:
+    <a href="https://www.facebook.com/share/16yw18BJpF/" target="_blank" class="footer-link">Aliah Anielle Opia</a>,
+    <a href="https://www.facebook.com/andrei.galvez.2024" target="_blank" class="footer-link">Andrei Galvez</a>,
+    <a href="https://www.facebook.com/angelica.a.n.m.s?mibextid=ZbWKwL" target="_blank" class="footer-link">Angelica Nicole Sabangan</a>,
+    <a href="https://www.facebook.com/share/1Ax6bNW8Ek/" target="_blank" class="footer-link">Carl Vincent Adame</a>,
+    <a href="https://www.facebook.com/share/19nGZAYsYE/" target="_blank" class="footer-link">Nicole Samaniego</a>,
     <a href="https://www.facebook.com/bwahshahajs" target="_blank" class="footer-link">Pauleen Nabua</a>
   </footer>
 
