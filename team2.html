@@ -4,7 +4,12 @@
   <meta charset="UTF-8" />
   <title>ICT OR STEM CAREER INTEREST</title>
   <meta name="viewport" content="width=device-width, initial-scale=2.0" />
-
+  <video autoplay muted loop playsinline id="bg-video"
+  style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(1.2);
+         min-width: 100%; min-height: 100%; z-index: -2; object-fit: cover;
+         object-position: center;">
+  <source src="2bvideo.mp4" type="videos/mp4">
+</video>
   <style>
     body {
       margin: 0;
@@ -33,19 +38,8 @@
 
     @keyframes move {
       0% { transform: translate(0, 0); }
-      100% { transform: translate(-50px, -50px); }
-    }
 
-    #bg-video {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(1.2);
-      min-width: 100%;
-      min-height: 100%;
-      z-index: -2;
-      object-fit: cover;
-      object-position: center;
+      100% { transform: translate(-50px, -50px); }
     }
 
     .header {
@@ -97,7 +91,9 @@
       50% { transform: scale(1.1); }
     }
 
-    .container {
+    .container,
+    .video-container,
+    .info-container {
       background: linear-gradient(to right, #081F44, #4569AD);
       color: white;
       border-radius: 12px;
@@ -111,13 +107,17 @@
       transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
-    .container.visible {
+    .container.visible,
+    .video-container.visible,
+    .info-container.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
     .survey-intro,
-    .objectives li {
+    .objectives li,
+    .video-text,
+    .info-text {
       font-size: 17px;
       line-height: 1.6;
     }
@@ -146,6 +146,44 @@
       font-size: 14px;
     }
 
+    .video-wrapper iframe {
+      width: 100%;
+      max-width: 560px;
+      aspect-ratio: 16 / 9;
+      border-radius: 8px;
+    }
+
+    .video-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .video-wrapper,
+    .video-text {
+      flex: 1 1 300px;
+    }
+
+    .info-container {
+      display: flex;
+      flex-direction: row-reverse;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .info-container img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+    }
+
+    .info-text {
+      flex: 1 1 300px;
+    }
+
     @media (max-width: 600px) {
       .header h2 {
         font-size: 22px;
@@ -154,37 +192,36 @@
         top: 8px;
         right: 10px;
       }
+      .info-container {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- Background video -->
-  <video autoplay muted loop playsinline id="bg-video">
-    <source src="2bvideo.mp4" type="mp4" />
-    Your browser does not support HTML5 video.
-  </video>
-
   <!-- Header -->
-  <div class="header">
-    <div style="display: flex; align-items: center; justify-content: center; gap: 12px;">
-      <img src="logo.png" alt="School Logo" style="height: 70px; border-radius: 7px; mix-blend-mode: multiply" />
-
-      <div>
-        <h2>ICT OR STEM CAREER INTEREST</h2>
-        <p>TEAM CHAOS: CAREER INTEREST</p>
-      </div>
-
-      <img src="https://static.wixstatic.com/media/a3abbc_154d846596f24ce1bdc34ff9043dae05~mv2.png/v1/fill/w_244,h_244,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/98282767_287035322692710_912674139302317.png" alt="Right Logo" style="height: 110px; mix-blend-mode: multiply;" />
+ <div class="header">
+  <div style="display: flex; align-items: center; justify-content: center; gap: 12px;">
+    <img src="c:\Users\dopekids\Downloads\Untitled design.png" alt="Logo" style="height: 70px; border-radius: 7px; mix-blend-mode: multiply" />
+    
+    <div style="display: flex; align-items: center; justify-content: start; gap: 20px;"></div>
+    
+    <div>
+      <h2>ICT OR STEM CAREER INTEREST</h2>
+      <p>TEAM CHAOS: CAREER INTEREST</p> 
+    </div>
+    
+    <img src="https://static.wixstatic.com/media/a3abbc_154d846596f24ce1bdc34ff9043dae05~mv2.png/v1/fill/w_244,h_244,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/98282767_287035322692710_912674139302317.png" alt="Right Logo" style="height: 110px; mix-blend-mode: multiply;" />
     </div>
 
-    <div class="social-icons">
+   <div class="social-icons">
       <a href="https://www.facebook.com/profile.php?id=100086162787008" target="_blank" title="Facebook">
-        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook" />
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook">
       </a>
-      <a href="https://www.instagram.com/_sayraaaaaaaaaa" target="_blank" title="Instagram">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
+      <a href="https://www.instagram.com/_sayraaaaaaaaaa?igsh=cnpnbGhvbXJqNzEz" target="_blank" title="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
       </a>
     </div>
   </div>
@@ -208,7 +245,7 @@
   </div>
 
   <!-- Survey Button -->
-  <form action="https://docs.google.com/forms/d/e/1FAIpQLSdJ77iP1DQ-CPU9wUYhEP2Yj06m4UNbxsTQxItEfNxqonI2NA/viewform" target="_blank" style="text-align: center; margin-bottom: 40px;">
+  <form action="https://docs.google.com/forms/d/e/1FAIpQLSdJ77iP1DQ-CPU9wUYhEP2Yj06m4UNbxsTQxItEfNxqonI2NA/viewform?fbclid=IwY2xjawLtj_9leHRuA2FlbQIxMQBicmlkETFqNE9jRmx0SUxsTUdyZDhKAR76JUFT7w6MjrPNw0LAseBjxSWsbOKLxBt2ZILGMrkqZF4seNVBE9ekw2WEyQ_aem_mpt0RZ_QSPdXUsRYbkwI7A" target="_blank" style="text-align: center; margin-bottom: 40px;">
     <input type="submit" value="Click here to start Survey" />
   </form>
 
@@ -217,14 +254,16 @@
     Team Members: Zaira Jave, Axcel, Cristan Ralph, Aurealou, Archiles Dane, Zean Andrei
   </div>
 
-  <!-- Scroll Animation -->
+  <!-- Scroll Animation Script -->
   <script>
     window.addEventListener('scroll', () => {
-      const el = document.getElementById('surveyContainer');
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100) {
-        el.classList.add('visible');
-      }
+      const elements = [document.getElementById('surveyContainer'), document.getElementById('videoContainer'), document.getElementById('infoContainer')];
+      elements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add('visible');
+        }
+      });
     });
   </script>
 </body>
