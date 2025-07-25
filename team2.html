@@ -3,13 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>ICT OR STEM CAREER INTEREST</title>
-  <meta name="viewport" content="width=device-width, initial-scale=2.0" />
-  <video autoplay muted loop playsinline id="bg-video"
-  style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(1.2);
-         min-width: 100%; min-height: 100%; z-index: -2; object-fit: cover;
-         object-position: center;">
-  <source src="2bvideo.mp4" type="videos/mp4">
-</video>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       margin: 0;
@@ -38,7 +32,6 @@
 
     @keyframes move {
       0% { transform: translate(0, 0); }
-
       100% { transform: translate(-50px, -50px); }
     }
 
@@ -102,16 +95,6 @@
       margin: 20px auto;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       border: 2px solid black;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .container.visible,
-    .video-container.visible,
-    .info-container.visible {
-      opacity: 1;
-      transform: translateY(0);
     }
 
     .survey-intro,
@@ -201,22 +184,28 @@
 </head>
 <body>
 
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline id="bg-video"
+    style="position: fixed; top: 50%; left: 50%;
+           transform: translate(-50%, -50%) scale(1.2);
+           min-width: 100%; min-height: 100%;
+           z-index: -2; object-fit: cover; object-position: center;
+           background-color: #081F44;">
+    <source src="2bvideo.mp4" type="video/mp4" />
+  </video>
+
   <!-- Header -->
- <div class="header">
-  <div style="display: flex; align-items: center; justify-content: center; gap: 12px;">
-    <img src="c:\Users\dopekids\Downloads\Untitled design.png" alt="Logo" style="height: 70px; border-radius: 7px; mix-blend-mode: multiply" />
-    
-    <div style="display: flex; align-items: center; justify-content: start; gap: 20px;"></div>
-    
-    <div>
-      <h2>ICT OR STEM CAREER INTEREST</h2>
-      <p>TEAM CHAOS: CAREER INTEREST</p> 
-    </div>
-    
-    <img src="https://static.wixstatic.com/media/a3abbc_154d846596f24ce1bdc34ff9043dae05~mv2.png/v1/fill/w_244,h_244,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/98282767_287035322692710_912674139302317.png" alt="Right Logo" style="height: 110px; mix-blend-mode: multiply;" />
+  <div class="header">
+    <div style="display: flex; align-items: center; justify-content: center; gap: 12px;">
+      <img src="2logo.jpg" alt="Logo" style="height: 70px; border-radius: 7px; mix-blend-mode: multiply;" />
+      <div>
+        <h2>ICT OR STEM CAREER INTEREST</h2>
+        <p>TEAM CHAOS: CAREER INTEREST</p> 
+      </div>
+      <img src="https://static.wixstatic.com/media/a3abbc_154d846596f24ce1bdc34ff9043dae05~mv2.png/v1/fill/w_244,h_244,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/98282767_287035322692710_912674139302317.png" alt="School Logo" style="height: 110px; mix-blend-mode: multiply;" />
     </div>
 
-   <div class="social-icons">
+    <div class="social-icons">
       <a href="https://www.facebook.com/profile.php?id=100086162787008" target="_blank" title="Facebook">
         <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook">
       </a>
@@ -239,13 +228,13 @@
       <ul>
         <li>To promote self-awareness among students about their personal goals and interests.</li>
         <li>To understand what careers students are aiming for and why.</li>
-        <li>To understand what careers students are aiming for and why.</li>
+        <li>To identify common career paths chosen by students.</li>
       </ul>
     </div>
   </div>
 
   <!-- Survey Button -->
-  <form action="https://docs.google.com/forms/d/e/1FAIpQLSdJ77iP1DQ-CPU9wUYhEP2Yj06m4UNbxsTQxItEfNxqonI2NA/viewform?fbclid=IwY2xjawLtj_9leHRuA2FlbQIxMQBicmlkETFqNE9jRmx0SUxsTUdyZDhKAR76JUFT7w6MjrPNw0LAseBjxSWsbOKLxBt2ZILGMrkqZF4seNVBE9ekw2WEyQ_aem_mpt0RZ_QSPdXUsRYbkwI7A" target="_blank" style="text-align: center; margin-bottom: 40px;">
+  <form action="https://docs.google.com/forms/d/e/1FAIpQLSdJ77iP1DQ-CPU9wUYhEP2Yj06m4UNbxsTQxItEfNxqonI2NA/viewform" target="_blank" style="text-align: center; margin-bottom: 40px;">
     <input type="submit" value="Click here to start Survey" />
   </form>
 
@@ -254,17 +243,5 @@
     Team Members: Zaira Jave, Axcel, Cristan Ralph, Aurealou, Archiles Dane, Zean Andrei
   </div>
 
-  <!-- Scroll Animation Script -->
-  <script>
-    window.addEventListener('scroll', () => {
-      const elements = [document.getElementById('surveyContainer'), document.getElementById('videoContainer'), document.getElementById('infoContainer')];
-      elements.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          el.classList.add('visible');
-        }
-      });
-    });
-  </script>
 </body>
 </html>
